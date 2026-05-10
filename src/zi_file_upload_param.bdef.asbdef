@@ -1,0 +1,7 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for ZI_FILE_UPLOAD_PARAM //alias <alias_name>
+{
+}

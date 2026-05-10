@@ -1,0 +1,33 @@
+managed implementation in class zbp_i_file_rate_cds unique;
+strict ( 2 );
+with draft;
+extensible;
+
+define behavior for ZI_FILE_RATE_CDS alias b_oh_rates
+persistent table ztest_file_data
+extensible
+draft table ztest_rate_draft
+lock master
+total etag lastchangedat
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( precheck, authorization : global );
+  update ( features : instance );
+  delete ( features : instance );
+  field ( readonly : update ) rate_uuid, material, werks, gjahr, kostl;
+  field ( numbering : managed ) rate_uuid;
+  field ( readonly ) lock_status, is_lock, status;
+  action z_lock result [1] $self;
+  action z_unlock result [1] $self;
+  static action ( authorization : global ) file_download result [1] $self;
+  static action ( authorization : global ) file_upload deep parameter ZTEST_EXCEL_UPLOAD;
+
+validation Validatecustomer on save { create; field material; }
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+}

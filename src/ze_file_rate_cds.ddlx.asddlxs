@@ -1,0 +1,94 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'File Data',
+    typeNamePlural: 'File data',
+
+imageUrl: 'lock_status'
+
+    }
+//}
+annotate entity ZC_FILE_RATE_CDS with
+{
+
+
+
+  @UI.facet: [{
+  id: 'rate_uuid',
+  purpose: #STANDARD,
+  position: 10,
+  label: 'Rate File',
+  type: #IDENTIFICATION_REFERENCE,
+  targetQualifier: 'Basic'
+   }]
+
+  @UI.lineItem: [{ type: #FOR_ACTION , dataAction: 'z_lock' , label: 'Lock' , position: 13 },
+  { type: #FOR_ACTION , dataAction: 'z_unlock' , label: 'UnLock' , position: 14  },
+  { type: #FOR_ACTION , dataAction: 'file_download' , label: 'File Download' , position: 11  },
+  { type: #FOR_ACTION , dataAction: 'file_upload' , label: 'File upload' , position: 12  }
+  ]
+  @UI.hidden: true
+  rate_uuid;
+
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem: [{ position: 20, label: 'Materila No' }]
+  @UI.identification: [{ position: 20, label: 'Material Number', qualifier: 'Basic' }]
+
+  material;
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem: [{ position: 30, label: 'Plant' }]
+  @UI.identification: [{ position: 30, label: 'Plant', qualifier: 'Basic' }]
+
+  werks;
+  @UI.selectionField: [{ position: 40 }]
+  @UI.lineItem: [{ position: 40, label: 'Fiscal Year' }]
+  @UI.identification: [{ position: 40, label: 'Fiscal Year', qualifier: 'Basic' }]
+
+  gjahr;
+  @UI.selectionField: [{ position: 50 }]
+  @UI.lineItem: [{ position: 50, label: 'Cost Center' }]
+  @UI.identification: [{ position: 50, label: 'Cost Center', qualifier: 'Basic' }]
+
+  kostl;
+
+  @UI.lineItem: [{ position: 60, label: 'Rate 1' }]
+  @UI.identification: [{ position: 60, label: 'Rate 1', qualifier: 'Basic' }]
+
+  rate1;
+  @UI.lineItem: [{ position: 70, label: 'Rate 2' }]
+  @UI.identification: [{ position: 70, label: 'Rate 2', qualifier: 'Basic' }]
+  rate2;
+  @UI.lineItem: [{ position: 80, label: 'Rate 3' }]
+  @UI.identification: [{ position: 80, label: 'Rate 3', qualifier: 'Basic' }]
+  rate3;
+  @UI.lineItem: [{ position: 90, label: 'Rate 4' }]
+  @UI.identification: [{ position: 90, label: 'Rate 4', qualifier: 'Basic' }]
+  rate4;
+  @UI.lineItem: [{ position: 100, label: 'Rate 5' }]
+  @UI.identification: [{ position: 100, label: 'Rate 5', qualifier: 'Basic' }]
+  rate5;
+  @UI.lineItem: [{ position: 110, label: 'Rate 6' }]
+  @UI.identification: [{ position: 110, label: 'Rate 6', qualifier: 'Basic' }]
+  rate6;
+  @UI.lineItem: [{ position: 120, label: 'Rate 7' }]
+  @UI.identification: [{ position: 120, label: 'Rate 7', qualifier: 'Basic' }]
+  rate7;
+  @UI.lineItem: [{ position: 130, label: 'Rate 8' }]
+  @UI.identification: [{ position: 130, label: 'Rate 8', qualifier: 'Basic' }]
+  rate8;
+  @UI.lineItem: [{ position: 140, label: 'Rate 9' }]
+  @UI.identification: [{ position: 140, label: 'Rate 9', qualifier: 'Basic' }]
+  rate9;
+  @UI.lineItem: [{ position: 150, label: 'Rate 10' }]
+  @UI.identification: [{ position: 150, label: 'Rate 10', qualifier: 'Basic' }]
+  rate10;
+//  @UI.lineItem: [{ position: 160, label: 'status' }]
+//  @UI.identification: [{ position: 160, label: 'status', qualifier: 'Basic' }]
+//  status;
+//  @UI.lineItem: [{ position: 170, label: 'Lock check' }]
+//  @UI.identification: [{ position: 170, label: 'Lock check', qualifier: 'Basic' }]
+//  is_lock;
+  @UI.lineItem: [{ position: 180, label: 'Lock status' }]
+  @UI.identification: [{ position: 180, label: 'Lock status', qualifier: 'Basic' }]
+  lock_status;
+
+}

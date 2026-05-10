@@ -1,0 +1,4 @@
+@EndUserText.label: 'service defintion for file update'
+define service ZUI_SERV_DEF_FILE_RATE_NEW {
+  expose ZC_FILE_RATE_CDS;
+}
